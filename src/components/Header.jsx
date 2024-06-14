@@ -6,11 +6,14 @@ import Images from "@/assets/images";
 import Navbar from "./Navbar";
 import Icons from "@/assets/icons";
 import { Link } from "react-router-dom";
+import { useSelector } from "react-redux";
 
 const cx = classNames.bind(style);
 
 function Header() {
   const [scrolled, setScrolled] = useState(false);
+
+  const quantityCart = useSelector( state => state.quantityCart.quantity)
 
   useEffect(() => {
     const handleScroll = () => {
@@ -44,7 +47,7 @@ function Header() {
       <div className={cx("cart")}>
         <Link to="/cart">
           {Icons.cart}
-          <span className={cx("quantity")}>0</span>
+          <span className={cx("quantity")}>{quantityCart}</span>
         </Link>
       </div>
     </div>

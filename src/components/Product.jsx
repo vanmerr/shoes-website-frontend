@@ -7,6 +7,10 @@ import { useNavigate } from "react-router-dom";
 import Icons from "@/assets/icons";
 import Input from "./Input";
 import { debounce } from "lodash";
+import { useDispatch } from "react-redux";
+import { type } from "@testing-library/user-event/dist/type";
+import { onAlert } from "@/redux/toolkits/alertSlice";
+import { loadQuantity } from "@/redux/toolkits/quantityCartSlice";
 
 const cx = classNames.bind(style);
 function Product({
@@ -38,6 +42,7 @@ function Product({
     initialSize.stock_quantity,
   );
   const [quantity, setQuantity] = useState(1);
+  const dispatch = useDispatch();
 
   const handleColorChange = (color, sizes) => {
     setSelectedColor(color);
@@ -68,6 +73,11 @@ function Product({
       quantity: quantity > stockQuantity ? stockQuantity : quantity,
     };
 
+    const payload = {
+      message: "Added product to cart successfully !",
+      type: "success",
+    };
+
     // Get the current cart from session storage
     const currentCart = JSON.parse(sessionStorage.getItem("carts")) || [];
 
@@ -91,7 +101,8 @@ function Product({
 
     // Save the updated cart back to session storage
     sessionStorage.setItem("carts", JSON.stringify(currentCart));
-
+    dispatch(onAlert(payload));
+    dispatch(loadQuantity());
   };
 
   const debounceUpdateQuantity = useCallback(
@@ -107,6 +118,7 @@ function Product({
 
   const handleClickProduct = () => {
     if (normal || flashSale) {
+      window.scrollTo(0, 0);
       navigate(`/product-detail/${product.product_id}`);
     }
     return;

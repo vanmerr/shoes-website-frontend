@@ -1,6 +1,7 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faBell,
+  faCircleXmark,
   faCopyright,
   faEye,
   faEyeSlash,
@@ -10,6 +11,7 @@ import {
   faArrowRight,
   faAt,
   faBars,
+  faBug,
   faCartPlus,
   faCartShopping,
   faCircleCheck,
@@ -37,6 +39,7 @@ const Icons = {
   arrowRigth: <FontAwesomeIcon icon={faArrowRight} />,
   warning: <FontAwesomeIcon icon={faCircleExclamation} />,
   success: <FontAwesomeIcon icon={faCircleCheck} />,
+  error: <FontAwesomeIcon icon={faBug}/>,
   at: <FontAwesomeIcon icon={faAt} />,
   lock: <FontAwesomeIcon icon={faLock} />,
   eye: <FontAwesomeIcon icon={faEye} />,
@@ -50,7 +53,8 @@ const Icons = {
   LK: <FontAwesomeIcon icon={faLinkedin} />,
   plus: <FontAwesomeIcon icon={faPlus} />,
   minus: <FontAwesomeIcon icon={faMinus} />,
-  cartPlus: <FontAwesomeIcon icon={faCartPlus} />
+  cartPlus: <FontAwesomeIcon icon={faCartPlus} />,
+  close: <FontAwesomeIcon icon={faCircleXmark}/>
 };
 
 export default Icons;
