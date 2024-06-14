@@ -1,0 +1,180 @@
+.wapper,
+.number {
+  position: relative;
+  width: 100%;
+  height: 5rem;
+  margin-bottom: 1.8rem;
+  border: 1px solid var(--gray-color);
+  border-radius: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.6rem;
+  transition: 0.5s;
+  box-shadow: #fac0a9 0px 10px 10px -5px;
+
+  .group {
+    width: 100%;
+    height: 4rem;
+    position: relative;
+    flex-wrap: 1;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 2rem;
+    margin: 0.5rem;
+
+    input[type="text"],
+    input[type="password"],
+    input[type="number"] {
+      width: 100%;
+      padding: 0 0 0 2rem;
+      height: 3.5rem;
+      border-radius: 2rem;
+      color: var(--gray-color);
+      // background-color: #e4e4e4;
+
+      &:focus + label {
+        top: -2rem;
+        left: 0;
+        color: var(--dark-color);
+      }
+
+      &:focus + .notLabel {
+        display: none;
+      }
+
+      &:not(:placeholder-shown) + label {
+        opacity: 0;
+      }
+      &:focus ~ .alertError {
+        opacity: 1;
+      }
+    }
+
+    input[type="number"] {
+      padding: 0;
+      text-align: center;
+      &::-webkit-inner-spin-button,
+      &::-webkit-outer-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+      }
+
+      /* Hide the spinner controls in Firefox */
+      -moz-appearance: textfield;
+    }
+
+    label {
+      position: absolute;
+      left: 5%;
+      font-size: 1.2rem;
+      color: rgb(150, 150, 150);
+      transition: 0.5s;
+      z-index: 9999;
+      padding: 0 0.5rem;
+      cursor: text;
+    }
+    .alertError {
+      transition: 0.5s;
+      position: absolute;
+      bottom: -2.4rem;
+      left: 1rem;
+      font-size: 1.2rem;
+      color: red;
+      display: flex;
+      opacity: 0;
+      align-items: center;
+      .icon-warning {
+        margin-right: 0.4rem;
+      }
+    }
+  }
+
+  .icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: 0.5rem;
+    padding: 1rem;
+    height: 100%;
+    font-size: 1.8rem;
+    color: var(--dark-color);
+  }
+
+  &:focus-within {
+    border-color: var(--primary-color);
+  }
+}
+
+.notMarginBottom {
+  margin: 0;
+}
+
+.notBoxShadow {
+  box-shadow: unset;
+}
+
+.checkbox {
+  margin: 0 0.5rem;
+  font-size: 1.4rem;
+
+  .group {
+    display: flex;
+    margin-left: 2rem;
+    input[type="checkbox"] {
+      margin-right: 0.5rem;
+      padding: 0.5rem;
+      cursor: pointer;
+    }
+    label {
+      cursor: pointer;
+    }
+  }
+}
+
+.iconcheck {
+  .group {
+    input[type="checkbox"] {
+      position: absolute;
+      opacity: 0;
+      cursor: pointer;
+      height: 0;
+      width: 0;
+
+      &:checked + label {
+        transform: rotateY(180deg);
+      }
+    }
+
+    label {
+      padding: 1rem;
+      transition: 0.5s;
+      font-size: 1.6rem;
+    }
+  }
+}
+
+@media screen and (max-width: 57.5rem) {
+  .wapper,
+  .number {
+    height: 4rem;
+    .group {
+      margin: 0;
+      input[type="text"],
+      input[type="password"],
+      input[type="number"] {
+        width: 100%;
+        height: 100%;
+
+        &:focus + label {
+          top: -1.5rem;
+        }
+      }
+
+      .alertError {
+        bottom: -1.5rem;
+      }
+    }
+  }
+}

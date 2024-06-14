@@ -1,0 +1,16 @@
+.wapper {
+
+
+    .container {
+        margin-top: 7rem;
+    }
+}
+
+@media screen and (max-width: 57.5rem) {
+    .wapper {
+
+        .container {
+            margin-top: 0;
+        }
+    }
+  }

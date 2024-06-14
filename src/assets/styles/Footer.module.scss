@@ -1,0 +1,43 @@
+.wapper{
+    margin-top: 2rem;
+    width: 100%;
+    margin-bottom: 8rem;
+
+    .container{
+        margin: auto;
+        width: 90%;
+        display: flex;
+        justify-content: space-evenly;
+
+        .heading{
+            display: block;
+            font-weight: 600;
+            font-size: 1.2rem;
+            padding-bottom: .5rem;
+
+        }
+    }
+
+    .copy-right{
+        border-top: 1px solid var(--dark-color);
+        margin: auto;
+        width: 90%;
+        display: flex;
+        align-items: center;
+        font-size: 1.2rem;
+
+        .icon{
+            margin: .5rem;
+        }
+    }
+}
+
+@media screen and (max-width: 57.5rem){
+    .wapper{
+        .container {
+            .pay-ship{
+                display: none;
+            }
+        }
+    }
+}

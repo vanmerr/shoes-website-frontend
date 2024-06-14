@@ -1,0 +1,79 @@
+
+
+.container {
+  position: relative;
+  width: 35rem;
+  animation:  Scale .5s ease-in-out;
+  border-radius: 4rem;
+  overflow: hidden;
+  background-color: var(--white-color);
+  padding-bottom: 10rem;
+
+  form {
+    margin: auto;
+    position: relative;
+
+    .actionPassword {
+      width: 100%;
+      position: relative;
+    }
+
+    .actionForgotPass {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: end;
+      margin-bottom: 2rem;
+   }
+
+    .btn-submit {
+      margin-top: 1.5rem;
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+  }
+
+  .heading {
+    text-align: center;
+    padding: 2rem 1rem;
+    font-size: 3rem;
+    font-weight: 800;
+    color: var(--primary-color);
+    background-color: var(--white-color);
+  }
+
+  .social-account-container {
+    margin-top: 2rem;
+    position: relative;
+    padding-bottom: 3rem;
+    position: relative;
+    width: 100%;
+    background-color: var(--white-color);
+    text-align: center;
+
+    .title {
+      padding-top: 1rem;
+      display: block;
+      text-align: center;
+      font-size: 10px;
+      color: var(--dark-color);
+      font-size: 1.4rem;
+      margin-bottom: 2rem;
+    }
+    .social-account-item{
+      position: relative;
+      margin: auto;
+    }
+  }
+}
+
+@keyframes Scale {
+  0% {
+    transform: scale(0);
+  }
+  100% {
+    transform: scale(1);
+  }
+}

@@ -1,0 +1,53 @@
+@import "normalize.css";
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
+
+:root {
+  --primary-color: rgb(240, 135, 74);
+  --primary-color-opacity: rgba(219, 93, 20, 0.5);
+  --dark-color: rgb(75, 75, 75);
+  --white-color: #fff;
+  --gray-color: rgb(150, 150, 150);
+}
+
+@keyframes Scale {
+  0% {
+    transform: scale(0);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+html {
+  font-size: 62.5%;
+  scrollbar-width: none; /* For Firefox */
+  -ms-overflow-style: none;
+}
+
+body {
+  // position: relative;
+  color: var(--dark-color);
+  padding: 0;
+  margin: 0;
+  font-family: Roboto, sans-serif;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+ul {
+  padding: 0;
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: var(--dark-color);
+}
+
+button,
+input {
+  outline: none;
+  border: none;
+}
