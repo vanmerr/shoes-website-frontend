@@ -6,7 +6,6 @@
   padding: 1rem 1.6rem;
   font-size: 1.6rem;
   line-height: 1.8rem;
-  border: 1px solid transparent;
   background-color: transparent;
   overflow: hidden;
   cursor: pointer;
@@ -62,7 +61,6 @@
   }
 
   &:hover {
-    border-color: var(--primary-color);
     transform: scale(0.95);
   }
   &:hover::before {
@@ -112,6 +110,17 @@
   &:hover,
   &:hover .icon {
     color: var(--primary-color);
+  }
+}
+
+.textWhite {
+  transition: 0.5s;
+  font-size: 1.5rem;
+  font-weight: 300;
+
+  &:hover,
+  &:hover .icon {
+    color: var(--white-color);
   }
 }
 

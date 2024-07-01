@@ -1,3 +1,4 @@
+/* eslint-disable array-callback-return */
 import React, { useCallback, useState } from "react";
 import classNames from "classnames/bind";
 import style from "@/assets/styles/Product.module.scss";
@@ -8,7 +9,6 @@ import Icons from "@/assets/icons";
 import Input from "./Input";
 import { debounce } from "lodash";
 import { useDispatch } from "react-redux";
-import { type } from "@testing-library/user-event/dist/type";
 import { onAlert } from "@/redux/toolkits/alertSlice";
 import { loadQuantity } from "@/redux/toolkits/quantityCartSlice";
 
@@ -19,15 +19,12 @@ function Product({
   flashSale = false,
   productDetails = false,
 }) {
-  let classes = cx("wapper");
-  if (flashSale) {
-    classes = cx("wapper", { flashSale });
-  } else if (productDetails) {
-    classes = cx("wapper", { productDetails });
-  } else if (normal) {
-    classes = cx("wapper", { normal });
-  }
 
+  const props = {
+    normal,
+    flashSale,
+    productDetails,
+  }
   const navigate = useNavigate();
 
   const findFirstAvailableSize = (sizes) => {
@@ -105,6 +102,7 @@ function Product({
     dispatch(loadQuantity());
   };
 
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   const debounceUpdateQuantity = useCallback(
     debounce((value) => {
       if (value < 1) {
@@ -133,7 +131,7 @@ function Product({
   };
 
   return (
-    <div className={classes}>
+    <div className={cx('wapper', {...props})}>
       <div className={cx("container")} onClick={handleClickProduct}>
         <div className={cx("images")}>
           <div className={cx("main")}>
@@ -147,7 +145,7 @@ function Product({
         <div className={cx("detail")}>
           <div
             style={{
-              display: normal || productDetails ? "-webkit-box" : "none",
+              display: normal || productDetails? "-webkit-box" : "none",
             }}
             className={cx("name")}
           >
@@ -170,7 +168,7 @@ function Product({
               {fomartMoneyVN(product.price_new)}
             </span>
           </div>
-          {productDetails && (
+          {(productDetails) && (
             <div className={cx("colors")}>
               <div className={cx("title")}>
                 <span>Màu sắc</span>
@@ -193,7 +191,7 @@ function Product({
               </div>
             </div>
           )}
-          {productDetails && (
+          { (productDetails) && (
             <div className={cx("sizes")}>
               <div className={cx("title")}>
                 <span>Kích thước</span>

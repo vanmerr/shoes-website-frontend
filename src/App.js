@@ -12,7 +12,8 @@ function App() {
   const dispatch = useDispatch();
   useEffect(() => {
     if (!!isAlert) setTimeout(() => dispatch(offAlert()), 10000);
-  }, [isAlert]);
+  }, [dispatch, isAlert]);
+
   return (
     <div className="App">
       {isAlert && <Alert type={type} message={message} />}

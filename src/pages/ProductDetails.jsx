@@ -4,7 +4,6 @@ import Products from "@/components/Products";
 import { useSelector } from "react-redux";
 import Product from "@/components/Product";
 import { useParams } from "react-router-dom";
-import Footer from "@/components/Footer";
 
 const cx = classNames.bind(style);
 

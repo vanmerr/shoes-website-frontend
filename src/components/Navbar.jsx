@@ -14,22 +14,22 @@ function Navbar() {
     <ul className={cx("wapper")}>
       <li>
         <Button text to="/" leftIcon={Icons.home}>
-          Home
+          Trang chủ
         </Button>
       </li>
       <li>
         <Button text to="/notification" leftIcon={Icons.bell}>
-          Notification
+          Thông báo
         </Button>
       </li>
       <li>
         {isAuthenticated ? (
           <Button text to="/account" leftIcon={Icons.user}>
-            Account
+            Tài khoản
           </Button>
         ) : (
           <Button primary to="/authen">
-            Sign in
+            Đănh nhập
           </Button>
         )}
       </li>

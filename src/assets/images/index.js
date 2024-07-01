@@ -64,6 +64,7 @@ c0.001-0.001,0.002-0.001,0.003-0.002l6.19,5.238C36.971,39.205,44,34,44,24C44,22.
   slider4: require("./slider4.png"),
   slider5: require("./slider5.png"),
   product: require("./product.png"),
+  avatar: require("./avatar.png"),
 };
 
 export default Images;

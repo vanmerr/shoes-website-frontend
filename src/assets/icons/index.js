@@ -1,14 +1,18 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
+  faAddressCard,
   faBell,
   faCircleXmark,
   faCopyright,
+  faCreditCard,
   faEye,
   faEyeSlash,
+  faPenToSquare,
   faUser,
 } from "@fortawesome/free-regular-svg-icons";
 import {
   faArrowRight,
+  faArrowRightFromBracket,
   faAt,
   faBars,
   faBug,
@@ -17,12 +21,16 @@ import {
   faCircleCheck,
   faCircleExclamation,
   faHome,
+  faKey,
   faLock,
   faMagnifyingGlass,
   faMinus,
+  faMoneyCheckDollar,
   faPhone,
   faPlus,
   faShield,
+  faTrash,
+  faTruckFast,
 } from "@fortawesome/free-solid-svg-icons";
 import {
   faFacebook,
@@ -39,7 +47,7 @@ const Icons = {
   arrowRigth: <FontAwesomeIcon icon={faArrowRight} />,
   warning: <FontAwesomeIcon icon={faCircleExclamation} />,
   success: <FontAwesomeIcon icon={faCircleCheck} />,
-  error: <FontAwesomeIcon icon={faBug}/>,
+  error: <FontAwesomeIcon icon={faBug} />,
   at: <FontAwesomeIcon icon={faAt} />,
   lock: <FontAwesomeIcon icon={faLock} />,
   eye: <FontAwesomeIcon icon={faEye} />,
@@ -54,7 +62,15 @@ const Icons = {
   plus: <FontAwesomeIcon icon={faPlus} />,
   minus: <FontAwesomeIcon icon={faMinus} />,
   cartPlus: <FontAwesomeIcon icon={faCartPlus} />,
-  close: <FontAwesomeIcon icon={faCircleXmark}/>
+  close: <FontAwesomeIcon icon={faCircleXmark} />,
+  trash: <FontAwesomeIcon icon={faTrash} />,
+  pay: <FontAwesomeIcon icon={faCreditCard} />,
+  key: <FontAwesomeIcon icon={faKey}/>,
+  ship: <FontAwesomeIcon icon={faTruckFast} />,
+  logout: <FontAwesomeIcon icon={faArrowRightFromBracket} />,
+  address: <FontAwesomeIcon icon={faAddressCard} />,
+  bank: <FontAwesomeIcon icon={faMoneyCheckDollar} />,
+  edit: <FontAwesomeIcon icon={faPenToSquare} />,
 };
 
 export default Icons;

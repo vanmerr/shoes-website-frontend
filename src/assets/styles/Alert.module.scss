@@ -1,72 +1,74 @@
-.wapper{
-    animation: fade .5s ease-in;
-    top: 6rem;
-    right: 3rem;
-    position: fixed;
+.wapper {
+  animation: fade 0.5s ease-in;
+  top: 6rem;
+  right: 1rem;
+  position: fixed;
+  display: flex;
+  align-items: center;
+  border-radius: 0.5rem;
+//   overflow: hidden;
+  min-width: 25rem;
+  min-height: 5rem;
+  background-color: var(--white-color);
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px,
+    rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+  z-index: 99999;
+  justify-content: space-between;
+
+  .icon {
+    border-left: 0.5rem solid transparent;
+    font-size: 2rem;
+    margin-right: 1rem;
+    width: 4.4rem;
+    height: 5rem;
     display: flex;
     align-items: center;
-    border-radius: .5rem;
-    overflow: hidden;
-    min-width: 25rem;
-    min-height: 5rem;
-    background-color: var(--white-color);
-    box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
-    z-index: 99999;
-    justify-content: space-between;
+    justify-content: center;
+  }
 
-    .icon{
-        border-left: .5rem solid transparent;
-        font-size: 2rem;
-        margin-right: 1rem;
-        width: 4.4rem;
-        height: 5rem;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-    }
+  .message {
+    font-size: 1.5rem;
+    color: var(--dark-color);
+  }
 
-    .message{
-        font-size: 1.5rem;
-        color: var(--dark-color);
+  .close {
+    width: 5rem;
+    height: 5rem;
+    font-size: 2rem;
+    cursor: pointer;
+    &:hover {
+      transform: scale(0.95);
     }
+  }
 
-    .close{
-        width: 5rem;
-        height: 5rem;
-        font-size: 2rem;
-        cursor: pointer;
-        &:hover{
-            transform: scale(.95);
-        }
+  &.success {
+    .icon {
+      border-color: rgb(0, 255, 0);
+      color: rgb(0, 255, 0);
     }
+  }
+  &.warning {
+    .icon {
+      border-color: rgb(255, 230, 0);
+      color: rgb(255, 230, 0);
+    }
+  }
+  &.error {
+    .icon {
+      border-color: rgb(255, 0, 0);
+      color: rgb(255, 0, 0);
+    }
+  }
 
-    &.success{
-        .icon{
-            border-color: rgb(0, 255, 0);
-            color: rgb(0, 255, 0);
-        }
-    }
-    &.warning{
-        .icon{
-            border-color: rgb(255, 230, 0);
-            color:  rgb(255, 230, 0);
-        }
-    }
-    &.error{
-        .icon{
-            border-color: rgb(255, 0, 0);
-            color:  rgb(255, 0, 0);
-        }
-    }
 }
 
 @keyframes fade {
-    0% {
-        right: -100%;
-        opacity: 0;
-    }
-    100% {
-        right: 3rem;
-        opacity: 1;
-    }
+  0% {
+    right: -100%;
+    opacity: 0;
+  }
+  100% {
+    right: 3rem;
+    opacity: 1;
+  }
 }

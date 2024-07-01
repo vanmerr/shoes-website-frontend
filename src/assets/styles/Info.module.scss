@@ -1,0 +1,48 @@
+.wapper {
+  margin-top: 1rem;
+  width: 100%;
+  position: relative;
+  .container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    .info {
+        width: 60%;
+        .group-info{
+            display: flex;
+            align-items: center;
+            justify-content: space-evenly;
+            height: 6rem;
+
+            .title{
+                min-width: 15rem;
+            }
+        }
+    }
+
+    .image {
+      position: relative;
+      width: 20rem;
+      height: 20rem;
+      border-radius: 50%;
+      // overflow: hidden;
+
+      img {
+        border-radius: 50%;
+        width: 100%;
+        height: 100%;
+      }
+
+      .edit {
+        bottom: -1.2rem;
+        right: 2rem;
+        position: absolute;
+        z-index: 1;
+      }
+    }
+  }
+  .acction {
+  }
+}

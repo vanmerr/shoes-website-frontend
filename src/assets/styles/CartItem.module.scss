@@ -1,0 +1,134 @@
+.wapper {
+  position: relative;
+  width: 80%;
+  cursor: pointer;
+  height: 15rem;
+  display: flex;
+  border-radius: 5px;
+  justify-content: space-between;
+  overflow: hidden;
+  margin: 0.5rem auto;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+
+  &:hover .delete{
+    display: block;
+  }
+
+  .select {
+    width: 5%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    input[type="checkbox"] {
+      width: 1.8rem;
+      height: 1.8rem;
+      cursor: pointer;
+    }
+  }
+  .product {
+    position: relative;
+    width: 70%;
+    height: 100%;
+    display: flex;
+    .image {
+      width: 15rem;
+      height: 100%;
+
+      img {
+        margin: auto;
+        width: 99%;
+        height: 99%;
+      }
+    }
+    .option {
+      position: relative;
+      width: calc(100% - 150px);
+      .name {
+        width: 100%;
+        height: 4rem;
+        display: flex;
+        align-items: center;
+        text-wrap: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        font-size: 1.6rem;
+        color: var(--dark-color);
+      }
+
+      .option-select {
+        width: 100%;
+        height: 10rem;
+        display: flex;
+        align-items: center;
+        justify-content: space-evenly;
+
+        .option-color,
+        .option-size {
+          .title {
+            width: 6rem;
+            text-align: center;
+            margin-right: 1rem;
+            font-size: 1.4rem;
+            color: var(--dark-color);
+          }
+
+          select {
+            cursor: pointer;
+            width: 6rem;
+            height: 3rem;
+            outline: unset;
+            text-align: center;
+          }
+        }
+
+        .option-quantity {
+          .number {
+            display: flex;
+          }
+
+          .stock {
+            padding-top: 1rem;
+            color: var(--gray-color);
+            text-align: center;
+          }
+        }
+      }
+    }
+  }
+
+  .prices {
+    height: 100%;
+    width: 10%;
+    position: relative;
+    display: flex;
+    align-items: center;
+    .price {
+      margin: auto;
+      text-wrap: nowrap;
+      font-size: 1.6rem;
+      color: var(--primary-color);
+      font-weight: 300;
+      
+    }
+
+    .total {
+      position: absolute;
+      margin: auto;
+      text-wrap: nowrap;
+      font-weight: 450;
+      font-size: 1.8rem;
+      color: red;
+      bottom: 0.5rem;
+      right: .5rem;
+    }
+  }
+
+  .delete {
+    display: none;
+    position: absolute;
+    top: .5rem;
+    right: .5rem;
+    transition: .5s;
+  }
+}

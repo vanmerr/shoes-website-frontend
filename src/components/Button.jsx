@@ -21,6 +21,7 @@ function Button({
   onlyImage,
   textLink = false,
   text = false,
+  textWhite = false,
   ...ortherProps
 }) {
   let Comp = "button";
@@ -51,6 +52,7 @@ function Button({
     onlyImage,
     textLink,
     text,
+    textWhite,
     href
   });
 

@@ -6,6 +6,7 @@ import { useSelector } from "react-redux";
 const cx = classNames.bind(style);
 
 function Home() {
+  console.log("Home");
   const products = useSelector((state) => state.products.data);
 
   return (

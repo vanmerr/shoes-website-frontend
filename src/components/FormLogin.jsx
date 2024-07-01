@@ -9,10 +9,7 @@ import Images from "@/assets/images";
 import { validateUserName } from "@/untils/validateUserName";
 import { login } from "@/redux/toolkits/authSlice";
 import { useDispatch } from "react-redux";
-import {
-  useLocation,
-  useNavigate,
-} from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 
 const cx = classNames.bind(style);
 
@@ -25,16 +22,24 @@ function FormLogin() {
   const [typePass, setTypePass] = useState(true);
   const [password, setPassword] = useState("");
   const [username, setUsername] = useState("");
+  // const [loading, setLoading] = useState(false);
 
   const dispatch = useDispatch();
   const location = useLocation();
   const navigate = useNavigate();
 
-  const submit = (e) => {
+  const submit = async (e) => {
     e.preventDefault();
+    // const body = {
+    //   username,
+    //   password,
+    // }
+    // setLoading(true);
+    // const resultLogin = await postApi('/auth0/login', body);
+    // setLoading(false);
     localStorage.setItem("token", username);
     dispatch(login("user"));
-    navigate(location.state);
+    navigate(location.state || "/");
   };
 
   useEffect(() => {
@@ -103,7 +108,8 @@ function FormLogin() {
             styleOrther={{ width: "60%" }}
             onClick={submit}
           >
-            Sign in
+            {/* {loading && "Sign in ..."}
+            {!loading && "Sign in"} */}
           </Button>
         </div>
       </form>

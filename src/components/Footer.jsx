@@ -3,7 +3,6 @@ import classNames from "classnames/bind";
 import style from "@/assets/styles/Footer.module.scss";
 import Button from "./Button";
 import Icons from "@/assets/icons";
-import Images from "@/assets/images";
 
 const cx = classNames.bind(style);
 
